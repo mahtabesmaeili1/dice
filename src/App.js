@@ -40,10 +40,20 @@ const DiceGame = () => {
 
   return (
     <div>
-      <h1>Dice Game</h1>
+      <h1
+        style={{
+          margin: 40,
+          padding: 30,
+          textAlign: "center",
+          color: "pink",
+          background: "black",
+        }}
+      >
+        Dice Game
+      </h1>
       {players.map((player) => {
         return (
-          <div>
+          <div style={{ textAlign: "center", color: "green" }}>
             <p>
               {player.name}, current:{" "}
               {player.currentThrow ? player.currentThrow : "Roll the dice"}{" "}
@@ -53,8 +63,10 @@ const DiceGame = () => {
           </div>
         );
       })}
-      <button onClick={compareScore}>Compare Score</button>
-      {winner && <h2>{winner}</h2>}
+      <div style={{ textAlign: "center", color: "blue" }}>
+        <button onClick={compareScore}>Compare Score</button>
+        {winner && <h2>{winner}</h2>}
+      </div>
     </div>
   );
 };
